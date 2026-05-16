@@ -1,0 +1,8 @@
+# Don't commit API keys
+.env
+
+# Don't commit run outputs — let `make publish` move them into the web app
+results/
+__pycache__/
+*.pyc
+.pytest_cache/
