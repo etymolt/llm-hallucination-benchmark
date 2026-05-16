@@ -1,0 +1,53 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: pytest (Python ${{ matrix.python }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332  # v4.1.7
+      - uses: actions/setup-python@39cd14951b08e74b54015e9e001cdefcf80e669f  # v5.1.1
+        with:
+          python-version: ${{ matrix.python }}
+      - run: pip install -r requirements.txt
+      - run: pip install pytest pytest-cov
+      - run: pytest tests/ -q --tb=line
+
+  validate-dataset:
+    name: validate test_set.jsonl SHA256
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332  # v4.1.7
+      - run: |
+          ACTUAL=$(shasum -a 256 test_set.jsonl | awk '{print $1}')
+          EXPECTED="de97580e99ecea7cce567a279411ccb7633c13d2a97d68ec4062b8b396c2a040"
+          if [ "$ACTUAL" != "$EXPECTED" ]; then
+            echo "::error::test_set.jsonl SHA256 mismatch!"
+            echo "  expected: $EXPECTED"
+            echo "  actual:   $ACTUAL"
+            exit 1
+          fi
+          echo "::notice::test_set.jsonl SHA256 verified: $ACTUAL"
+
+  all-green:
+    name: all-green
+    if: always()
+    needs: [test, validate-dataset]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: re-actors/alls-green@05ac9388f0aebcb5727afa17fcccfecd6f8ec5fe  # v1.2.2
+        with:
+          jobs: ${{ toJSON(needs) }}
