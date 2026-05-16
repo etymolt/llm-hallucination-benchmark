@@ -1,5 +1,10 @@
 # LLM Brand-Name Hallucination Benchmark (2026)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.PENDING.svg)](https://zenodo.org/record/PENDING)
+[![License: MIT (code) + CC-BY-4.0 (data)](https://img.shields.io/badge/license-MIT%2BCC--BY--4.0-blue.svg)](LICENSE)
+[![Cite this dataset](https://img.shields.io/badge/cite-this--dataset-orange.svg)](CITATION.cff)
+
+
 How often do frontier LLMs confabulate trademark conflicts — or, worse, miss
 real ones — when asked whether a proposed brand name is safe to use?
 

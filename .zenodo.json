@@ -1,0 +1,29 @@
+{
+  "title": "The LLM Brand-Name Hallucination Benchmark",
+  "description": "How often do frontier LLMs hallucinate trademark clearance? 500 names × 10 categories, structured ground truth, reproducible build.",
+  "creators": [
+    {
+      "name": "Attarwala, Tariq",
+      "affiliation": "Etymolt Inc."
+    }
+  ],
+  "keywords": ["llm", "hallucination", "benchmark", "trademark", "uspto", "ttab", "brand-naming", "evaluation"],
+  "license": "MIT",
+  "access_right": "open",
+  "upload_type": "dataset",
+  "communities": [
+    {"identifier": "zenodo"}
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/etymolt/llm-hallucination-benchmark",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://etymolt.com/research/llm-hallucination-benchmark",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    }
+  ]
+}

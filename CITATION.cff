@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+title: "The LLM Brand-Name Hallucination Benchmark"
+message: "If you use this benchmark in academic or industry work, please cite using the metadata below."
+type: dataset
+authors:
+  - given-names: Tariq
+    family-names: Attarwala
+    affiliation: "Etymolt Inc."
+    orcid: ""
+abstract: >-
+  How often do frontier LLMs (GPT-5, Claude 4.7, Gemini 3, Llama 4) fabricate
+  trademark clearance when asked "is X a good brand name?" — 500 names × 10
+  categories, structured ground truth, reproducible build.
+keywords:
+  - llm
+  - hallucination
+  - benchmark
+  - trademark
+  - uspto
+  - ttab
+  - brand-naming
+  - evaluation
+license: MIT
+license-url: https://github.com/etymolt/llm-hallucination-benchmark/blob/main/LICENSE
+repository-code: https://github.com/etymolt/llm-hallucination-benchmark
+url: https://etymolt.com/research/llm-hallucination-benchmark
+preferred-citation:
+  type: article
+  title: "The LLM Brand-Name Hallucination Benchmark: How Often Do Frontier Models Fabricate Trademark Clearance?"
+  authors:
+    - given-names: Tariq
+      family-names: Attarwala
+      affiliation: "Etymolt Inc."
+  year: 2026
+  url: https://github.com/etymolt/llm-hallucination-benchmark
