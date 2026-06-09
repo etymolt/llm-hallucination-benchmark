@@ -1,0 +1,16 @@
+# CODEOWNERS — automatic PR reviewers
+#
+# Format: <pattern> @<github-username-or-team>
+# See https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default reviewer for everything
+*                       @etymolt/maintainers
+
+# Governance files — editor only
+/AGENTS.md              @etymolt/maintainers
+/CLAUDE.md              @etymolt/maintainers
+/GOVERNANCE.md          @etymolt/maintainers
+/CODEOWNERS             @etymolt/maintainers
+/SECURITY.md            @etymolt/maintainers
+/CODE_OF_CONDUCT.md     @etymolt/maintainers
+/CONTRIBUTING.md        @etymolt/maintainers
