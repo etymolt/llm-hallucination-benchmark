@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "title": "LLM Brand-Name Hallucination Benchmark v0.5 — raw scoring outputs",
+    "upload_type": "dataset",
+    "description": "Per-cell scored outputs (975,192 rows) and aggregate analysis JSON for the LLM Brand-Name Hallucination Benchmark v0.5 (2026-05-26). Six frontier models (GPT-5.5, GPT-5.4, Claude Opus 4.7, Claude Sonnet 4.6, Gemini 3.1 Pro, Gemini 3.1 Flash-Lite). 1,200 candidate names x 6 conditions x 3 repeats = 129,600 generations. Headline: 97.01% of 50,327 verifiable USPTO citations are fabricated or mis-attributed (Wilson 95% CI 96.86-97.16%). Released so independent replicators can verify the headline without re-running ~$1,500 of API calls.",
+    "creators": [
+      {
+        "name": "Etymolt Inc.",
+        "affiliation": "Etymolt Inc., Fremont, CA"
+      }
+    ],
+    "keywords": [
+      "LLM",
+      "hallucination",
+      "brand naming",
+      "trademark",
+      "USPTO",
+      "benchmark"
+    ],
+    "license": "cc-by-4.0",
+    "publication_date": "2026-06-10",
+    "related_identifiers": [
+      {
+        "relation": "isDocumentedBy",
+        "identifier": "https://github.com/etymolt/llm-hallucination-benchmark/blob/main/PAPER.md",
+        "scheme": "url"
+      },
+      {
+        "relation": "isSupplementTo",
+        "identifier": "https://github.com/etymolt/llm-hallucination-benchmark",
+        "scheme": "url"
+      }
+    ],
+    "version": "0.5",
+    "language": "eng",
+    "access_right": "open"
+  }
+}

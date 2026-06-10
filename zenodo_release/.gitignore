@@ -1,0 +1,6 @@
+# The actual large data payload is NOT bundled into git.
+# Operator runs zenodo_publish.sh, pointing at the local v2/runs/pooled/ path.
+# sha256 sums for the expected payload live in MANIFEST.txt.
+cells.jsonl
+*.tar.gz
+*.zip
