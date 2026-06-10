@@ -1,0 +1,14 @@
+# MANIFEST.txt — Zenodo deposit, LLM Brand-Name Hallucination Benchmark v0.5
+# Format: <sha256>  <bytes>  <filename>
+# Generated: 2026-06-10T09:59:49Z
+
+## Data (the deposit payload)
+9b308bec675e71cb608a52a57ba751ac7685e753ae2b99a6a32d7aafaff26ac6  406664270  cells.jsonl
+1619f4f3dbea21c290a7d0c7fcad36a73359ce613633ae68345e671fe6fe3dfd  5366  analysis.json
+
+## Documentation + metadata sidecars
+91a7b66b2f03ea8409d8cf3280dc8bab15913aa7e82fdb40fb0207b5151fa209  5489  README.md
+5de1bac218dc7f7662eb24a3bd94b8fca4ddd9b16470ce11f55e13eec8d8d69e  4305  DATASET_SCHEMA.md
+41b4256078b22dd7718688ef6d634d40afa0c07ad8d7be8d78f41aa1f78fbbec  2453  REPLICATION_QUICKSTART.md
+49bb9ac961387de10059434a4bdc55578ed853d367da4ff049b6d1ffd80cf199  1467  metadata.json
+30aa60e7f60f1a138048ce8a5187ab19575dc6755ae9a44d7d246e3b011c0ffa  4041  zenodo_publish.sh
