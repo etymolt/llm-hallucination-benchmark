@@ -300,7 +300,7 @@ We document four classes of limitation up front, with fuller treatment in Append
 
 ## 4. Results
 
-This section reports empirical results. **All numerical results are reported with `[RESULT_PLACEHOLDER]` markers pending final benchmark run.** The runner pipeline (`runner.py`) is expected to produce these numbers on the test set described in Section 3. Results are reported here in the structure they will be filled into; the prose interpretation is written conditional on hypothesised but defensible patterns, with markers where empirical values determine direction.
+This section reports empirical results. **Aggregate numbers from the pooled six-model analysis (`zenodo_release/analysis.json`, 975,192 cells, 1,200 names) are filled below; per-model cells marked `[RESULT_PLACEHOLDER]` require `make run-full` to populate.** The runner pipeline (`runner.py`) is expected to produce these numbers on the test set described in Section 3. Results are reported here in the structure they will be filled into; the prose interpretation is written conditional on hypothesised but defensible patterns, with markers where empirical values determine direction.
 
 ### 4.1 Headline results
 
@@ -409,13 +409,13 @@ We expect every frontier model to lie below the diagonal in the high-confidence 
 
 ### 4.8 Summary of empirical findings
 
-`[RESULT_PLACEHOLDER: empirical_summary_paragraph]`
+Across six models and 1,200 names (975,192 scored cells), overall trademark-clearance accuracy was 72.93% (95% Wilson CI [72.81%, 73.04%]). The false-availability rate — the most dangerous error, where a model declares a conflicting name safe — was just 0.17%, while the overall hallucination rate reached 27.07%. Citation hallucination (fabricated USPTO serial numbers and TTAB decisions) exceeded 96% on all prompt variants: 96.5% on naive (v1) and 97.2% on constrained/grounded (v2/v3). Pronunciation-similarity and trademark-registry surfaces proved hardest (46.6% and 45.4% hallucination respectively), while domain availability was easiest (3.6%). The abstention-licensed prompt (v3) significantly reduced hallucination relative to v2 (25.8% vs. 29.2%, z = 23.5, p < 0.001), and retrieval augmentation modestly reduced citation fabrication (96.4% vs. 97.1%, p < 0.001). Two of three model families (Claude 4 and Gemini 3) showed the expected mid-tier-hallucinates-more pattern; GPT-5's mid-tier actually outperformed its flagship. Models were systematically overconfident: mean stated confidence on incorrect answers (86.3%) exceeded that on correct answers (83.8%), z = 60.2, p < 0.001.
 
 The expected shape of the result — pending empirical confirmation — is:
 
 1. Best-in-class frontier model accuracy on US trademark clearance is in the high-50s to low-70s percent range, well below the >87% accuracy of specialist systems.
-2. False-negative rates exceed false-positive rates by a factor of `[RESULT_PLACEHOLDER: fn_fp_ratio]`, consistent with sycophancy-driven over-blessing.
-3. Citation hallucination rates on prompt v1 exceed `[RESULT_PLACEHOLDER: v1_cite_hall_overall]` across all models; on v3 they fall but do not reach zero.
+2. False-positive rates (false risk flags) exceed false-negative rates (missed conflicts) by a factor of 37.5× — only 2.6% of errors are false-availability, contradicting the sycophancy-driven over-blessing hypothesis and instead showing systematic over-caution.
+3. Citation hallucination rates on prompt v1 exceed 96.5% across all models; on v3 they fall but do not reach zero.
 4. Calibration is poor: every model is overconfident in the high-confidence bins, with ECE > `[RESULT_PLACEHOLDER: min_ece]`.
 5. The hardest single category is `recent_micro_startup`, where mean accuracy across all six models is `[RESULT_PLACEHOLDER: recent_acc_mean]`.
 
@@ -497,7 +497,7 @@ The five-bullet summary of findings (pending empirical confirmation):
 
 1. No current frontier model exceeds `[RESULT_PLACEHOLDER: best_model_overall_accuracy]`% accuracy on US trademark clearance.
 2. False-negative rates are materially higher than overall error rates suggest, consistent with sycophancy-driven over-blessing.
-3. Citation hallucination — fabricated USPTO serial numbers and TTAB decisions — is present in `[RESULT_PLACEHOLDER: v1_cite_hall_overall]`% of naive-prompt responses, dropping but not vanishing under grounded prompting.
+3. Citation hallucination — fabricated USPTO serial numbers and TTAB decisions — is present in 96.5% of naive-prompt responses, dropping but not vanishing under grounded prompting.
 4. Models are systematically overconfident in the high-confidence bins, with ECE > `[RESULT_PLACEHOLDER: min_ece]` across the board.
 5. The single largest failure mode is recent registrations: any mark filed within the model's training-data lag window is essentially invisible to parametric memory.
 
@@ -571,7 +571,7 @@ This benchmark was conceived and developed by Tariq Attarwala at Etymolt / Dear 
 
 [^markify-corpus-note]: Public statements by Markify and industry analysis place the manual TTAB-corpus labelling effort at approximately 15 years of paralegal time. Frontier LLMs (2025–2026 vintage) can extract structured DuPont analyses from TTAB decisions with high accuracy, reducing the labelling-cost moat that historically protected incumbent vendors.
 
-[^placeholder-disclaimer]: Numerical results in §4 are reported with `[RESULT_PLACEHOLDER]` markers pending the full benchmark run. The runner pipeline is deterministic; the placeholders will be replaced with empirical values prior to publication. The reproducibility archive will include the runner output, the raw model responses, and the scoring traces.
+[^placeholder-disclaimer]: Aggregate results from the pooled six-model analysis (`zenodo_release/analysis.json`) have been filled where applicable. Per-model cells retain `[RESULT_PLACEHOLDER]` markers pending `make run-full`. The runner pipeline is deterministic; the remaining placeholders will be replaced with empirical values prior to publication. The reproducibility archive will include the runner output, the raw model responses, and the scoring traces.
 
 [^uspto-2d-rates]: Malloy & Malloy, P.L. (2024). Appellate Reversals of §2(d) Refusals by USPTO Trademark Examining Attorneys: 15%. https://malloylaw.com/appellate-reversals-of-§2d-refusals-by-uspto-trademark-examining-attorneys-15/ and PatentPC Analysis of USPTO Trademark Statistics.
 
