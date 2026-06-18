@@ -18,7 +18,7 @@ jobs:
       matrix:
         python: ["3.11", "3.12", "3.13"]
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332  # v4.1.7
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10  # v6.0.3
       - uses: actions/setup-python@39cd14951b08e74b54015e9e001cdefcf80e669f  # v5.1.1
         with:
           python-version: ${{ matrix.python }}
@@ -30,7 +30,7 @@ jobs:
     name: validate test_set.jsonl SHA256
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332  # v4.1.7
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10  # v6.0.3
       - run: |
           ACTUAL=$(shasum -a 256 test_set.jsonl | awk '{print $1}')
           EXPECTED="de97580e99ecea7cce567a279411ccb7633c13d2a97d68ec4062b8b396c2a040"
